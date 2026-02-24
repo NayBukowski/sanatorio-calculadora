@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sanatório Bukowski — Calculadora</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="top-actions">
+      <button class="pill" id="btnInfo">📋 Informações</button>
+      <a class="pill link" href="https://vercel.com/" target="_blank" rel="noreferrer">🚀 Publicar na Vercel</a>
+    </div>
+
+    <div class="brand">
+      <img class="logo" src="assets/logo.jpg" alt="Sanatório Bukowski" />
+      <p class="subtitle">CALCULADORA DE VENDAS • VALORES MÍN/MÁX • MODO “PISTA”</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="summary">
+        <div>
+          <h3 class="muted">TOTAL (mínimo)</h3>
+          <div class="money big" id="totalMin">R$ 0</div>
+        </div>
+        <div>
+          <h3 class="muted">TOTAL (máximo)</h3>
+          <div class="money big" id="totalMax">R$ 0</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="row-left">
+          <strong>Venda para pista (sempre MÁXIMO)</strong>
+          <div class="muted small">Ativa automaticamente o preço máximo nos itens que têm faixa.</div>
+        </div>
+
+        <label class="switch" title="Venda para pista">
+          <input type="checkbox" id="togglePista" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row" style="align-items:flex-start;">
+        <div class="row-left">
+          <strong>Observação</strong>
+          <div class="muted small">
+            Itens com preço fixo: mínimo = máximo.<br/>
+            Itens com faixa: mínimo e máximo variam conforme a lista.
+          </div>
+        </div>
+        <button class="btn ghost" id="limparCarrinho">Limpar</button>
+      </div>
+
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>🧾 Itens</h2>
+        <div class="muted small">Ajuste quantidade e o site calcula automaticamente.</div>
+      </div>
+
+      <div id="listaProdutos" class="products"></div>
+
+      <div class="divider"></div>
+
+      <div class="cart">
+        <h3>Carrinho</h3>
+        <div id="carrinhoVazio" class="muted">Nenhum item ainda.</div>
+        <div id="itensCarrinho" class="cart-items"></div>
+
+        <div class="divider"></div>
+
+        <div class="cart-actions">
+          <button class="btn ghost" id="salvar">Salvar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="modalInfo" class="modal">
+    <div class="modal-body">
+      <h3>📋 Informações</h3>
+      <ul>
+        <li><strong>Venda para pista</strong>: qualquer item com faixa (mín/máx) será calculado no <strong>máximo</strong>.</li>
+        <li><strong>Total mínimo</strong>: soma usando valores mínimos.</li>
+        <li><strong>Total máximo</strong>: soma usando valores máximos.</li>
+        <li>O carrinho salva no seu navegador (localStorage).</li>
+      </ul>
+      <div class="divider"></div>
+      <button class="btn" id="fecharInfo">Fechar</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
