@@ -50,7 +50,7 @@ body{
 }
 
 .logo{
-  width:min(700px, 92vw);
+  width:min(420px, 80vw);
   height:auto;
   border-radius:16px;
   border:1px solid rgba(255,60,60,.18);
