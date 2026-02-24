@@ -100,7 +100,12 @@ body{
   text-shadow: 0 0 16px rgba(255,70,70,.12);
 }
 
-.big{ font-size:38px; font-weight:900; letter-spacing:.4px; margin-top:6px; }
+.big{
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:.2px;
+  margin-top:4px;
+}
 
 .divider{ height:1px; background:rgba(255,60,60,.25); margin:16px 0; }
 
